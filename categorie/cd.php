@@ -5,19 +5,19 @@ require_once '../php/db_config.php';
 
 
 $isConnected = isset($_SESSION['user_id']);
-$email = $isConnected ? $_SESSION['email'] : '';  // Email de l'utilisateur connecté (s'il y en a)
+$email = $isConnected ? $_SESSION['email'] : '';  
 
-// Sécurisation des paramètres GET
+
 $tri = isset($_GET['tri']) ? mysqli_real_escape_string($conn, $_GET['tri']) : 'titre';
 $statut = isset($_GET['statut']) ? mysqli_real_escape_string($conn, $_GET['statut']) : '';
 
-// Liste blanche des colonnes autorisées pour le tri
+
 $colonnes_valides = ['titre', 'auteur', 'editeur',];
 if (!in_array($tri, $colonnes_valides)) {
     $tri = 'titre';
 }
 
-// Définition du titre dynamique du filtre
+
 switch ($statut) {
     case 'disponible':
         $titreTri = 'Disponibles';
@@ -41,7 +41,6 @@ if ($isConnected) {
         $livresEmpruntesParMoi[] = $row['id_livre'];
     }
 }
-// Vérifier l'abonnement de l'utilisateur
 $isAbonne = false;
 if ($isConnected) {
     $sql_abonne = "
@@ -54,7 +53,7 @@ if ($isConnected) {
     }
 }
 
-// Vérifier les emprunts en retard pour l'utilisateur
+
 $hasLateEmprunt = false;
 $nbEmpruntsActifs = 0;
 $today = date('Y-m-d');
@@ -77,8 +76,8 @@ if ($isConnected) {
     }
 }
 
-// Construction de la requête SQL principale pour afficher uniquement les livres
-$sql = "SELECT * FROM cd "; // Ajout de la condition pour filtrer les livres
+
+$sql = "SELECT * FROM cd "; 
 if (!empty($statut)) {
     $sql .= " AND statut = '$statut'";
 }
@@ -128,7 +127,7 @@ $result = mysqli_query($conn, $sql);
     <main>
         <h1>Catalogue de la Médiathèque</h1>
 
-        <!-- Menu de tri -->
+
         <div class="filter-menu">
             <?php
             foreach ($colonnes_valides as $colonne) {
@@ -165,7 +164,7 @@ $result = mysqli_query($conn, $sql);
                 <ul>
                     <?php while ($row = mysqli_fetch_assoc($res_mes_emprunts)): ?>
                         <?php
-                    // Vérifier si l'emprunt est en retard
+
                     $date_retour = strtotime($row['date_retour']);
                     $current_date = strtotime(date('Y-m-d'));
                     $isLate = $date_retour < $current_date;
@@ -195,7 +194,7 @@ $result = mysqli_query($conn, $sql);
         
         
 
-        <!-- Tableau des livres -->
+
         <?php if (mysqli_num_rows($result) > 0): ?>
             <table>
                 <thead>
@@ -213,10 +212,10 @@ $result = mysqli_query($conn, $sql);
                         <tr>
                             <td>
                                 <?php 
-                                // Créer le nom de l'image à partir du titre
+
                                 $titleWithoutSpaces = strtolower(str_replace(' ', '_', $row['titre']));
                                 
-                                // Enlever les accents
+
                                 $titleWithoutAccents = preg_replace(
                                     '/[àáâãäå]/u', 'a',
                                     preg_replace('/[èéêë]/u', 'e',
@@ -227,10 +226,10 @@ $result = mysqli_query($conn, $sql);
                                                         preg_replace('/[ñ]/u', 'n',
                                                             preg_replace('/[ýÿ]/u', 'y', $titleWithoutSpaces))))))));
                                 
-                                // Créer le nom du fichier image
+
                                 $imageName = $titleWithoutAccents . '.jpeg';
                                 
-                                // Vérifier si l'image existe dans le dossier assets
+
                                 if (file_exists('../assets/' . $imageName)): ?>
                                     <img src="../assets/<?php echo $imageName; ?>" alt="<?php echo htmlspecialchars($row['titre']); ?>" width="50" height="75">
                                 <?php else: ?>
