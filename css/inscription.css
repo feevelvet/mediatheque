@@ -1,0 +1,139 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f6f8fa;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+header {
+    background-color: #4a90e2;
+    color: white;
+    padding: 1rem;
+}
+
+.navbar .logo {
+    font-size: 1.8rem;
+    text-decoration: none;
+    color: white;
+}
+
+.navbar .menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+}
+
+.navbar .menu li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar .menu li a:hover {
+    color: #1abc9c;
+}
+
+
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+
+form {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 0.2rem;
+}
+
+input {
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+input:focus {
+    border-color: #4a90e2;
+    outline: none;
+}
+
+button {
+    padding: 0.8rem;
+    background-color: #4a90e2;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #3c7cc9;
+}
+
+
+footer {
+    background-color: rgba(44, 62, 80, 0.9);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto; 
+}
+
+
+@media screen and (max-width: 768px) {
+    .navbar .menu {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .main-content {
+        padding: 2rem 1rem;
+    }
+
+    form {
+        padding: 1.5rem;
+    }
+
+    input, button {
+        font-size: 1rem;
+    }
+}

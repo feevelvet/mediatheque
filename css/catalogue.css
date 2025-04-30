@@ -1,0 +1,255 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(145deg, rgba(243,243,243,0.8), rgba(220,220,220,0.8)), 
+                url('../assets/fond.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+.wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+
+h1 {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 2.8rem;
+    color: #2c3e50;
+}
+
+
+.top-bar {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1rem;
+}
+
+.top-bar a {
+    text-decoration: none;
+    color: #3498db;
+    font-weight: bold;
+}
+
+.top-bar a:hover {
+    text-decoration: underline;
+}
+
+
+.categories {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 50px 20px;
+}
+
+
+.categorie {
+    position: relative;
+    width: 260px;
+    height: 260px;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.categorie:hover {
+    transform: scale(1.05);
+}
+
+
+.categorie img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+    transition: filter 0.3s ease;
+}
+
+.categorie:hover img {
+    filter: brightness(0.4);
+}
+
+
+.categorie span {
+    position: absolute;
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+    letter-spacing: 1px;
+}
+
+
+@media screen and (max-width: 768px) {
+    .categories {
+        flex-direction: column;
+        align-items: center;
+    }
+    .categorie img {
+        width: 300px;
+        height: 400px;
+        object-fit: cover;
+        filter: brightness(0.6);
+        transition: filter 0.3s ease;
+    }
+    .categorie {
+        width: 90%;
+        height: 220px;
+    }
+}
+
+
+.navbar {
+    background-color: rgba(44, 62, 80, 0.9);
+    color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.navbar .logo {
+    font-size: 1.8rem;
+}
+
+.navbar .menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar .menu li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar .menu li a:hover {
+    color: #1abc9c;
+}
+
+
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn, .btn-outline {
+    background-color: #1abc9c;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    border: 2px solid #1abc9c;
+}
+
+.btn:hover, .btn-outline:hover {
+    background-color: transparent;
+    color: #1abc9c;
+}
+
+
+footer {
+    background-color: rgba(44, 62, 80, 0.9);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+.content-wrapper {
+    flex: 1;
+}
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar .menu {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+        margin-top: 1rem;
+    }
+
+    .auth-buttons {
+        flex-direction: column;
+        
+        gap: 10px;
+        margin-top: 1rem;
+    }
+
+    .overlay {
+        padding: 2rem 1.5rem;
+    }
+
+    .overlay h2 {
+        font-size: 2rem;
+    }
+
+    .overlay p {
+        font-size: 1.1rem;
+    }
+
+    .cta {
+        width: 100%;
+        padding: 0.8rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .overlay {
+        padding: 1.5rem 1rem;
+    }
+
+    .overlay h2 {
+        font-size: 1.6rem;
+    }
+
+    .overlay p {
+        font-size: 1rem;
+    }
+
+    .btn, .btn-outline {
+        
+        text-align: center;
+    }
+
+    .navbar {
+        padding: 1rem;
+    }
+
+    .main-content {
+        padding: 2rem 1rem;
+    }
+}

@@ -1,0 +1,136 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+header {
+    background-color: #005a87;
+    color: white;
+    padding: 1em 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2em;
+}
+
+.navbar h1 {
+    margin: 0;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 1.5em;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 1em;
+}
+
+.btn {
+    background-color: #ffffff;
+    color: #005a87;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #cce7f5;
+}
+
+.main-content {
+    max-width: 1000px;
+    margin: 2em auto;
+    text-align: center;
+    padding: 1em;
+}
+
+footer {
+    text-align: center;
+    padding: 1em;
+    background-color: #ddd;
+}
+
+.messagerie {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.messagerie h3 {
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+
+.messagerie ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.messagerie ul li {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-size: 1em;
+    color: #333;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.messagerie ul li:hover {
+    background-color: #f1f1f1;
+}
+
+
+.messagerie ul li span {
+    font-weight: bold;
+    color: red;
+}
+
+.messagerie ul li.message-retard {
+    border-left: 5px solid #ff4d4d;
+    background-color: #ffe6e6;
+}
+
+.messagerie ul li.message-renouvellement {
+    border-left: 5px solid #ffcc00;
+    background-color: #fff9e6;
+}
+
+.messagerie p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+
+.messagerie ul li.message-retard span,
+.messagerie ul li.message-renouvellement span {
+    color: #e60000;
+    font-weight: bold;
+}

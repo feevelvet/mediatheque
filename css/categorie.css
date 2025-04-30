@@ -1,0 +1,498 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(145deg, rgba(243,243,243,0.8), rgba(220,220,220,0.8)), 
+                url('../assets/livre.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-color: #f9f9f9;
+    
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+
+main {
+    flex-grow: 1;  
+}
+h1 {
+    text-align: center;
+}
+h2 {
+    text-align: center;
+    color: #005a87;
+    margin: 2em 0;
+    font-size: 2rem;
+}
+
+
+.filter-menu {
+    text-align: center;
+    margin-bottom: 1.5em;
+}
+
+.filter-menu a {
+    color: #005a87;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 1em;
+    font-size: 1.1rem;
+}
+
+.filter-menu a:hover {
+    text-decoration: underline;
+}
+
+
+table {
+    width: 70%;
+    margin: 0 0 0 10%;
+    border-collapse: collapse;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+table th, table td {
+    padding: 1em;
+    text-align: center;
+    font-size: 1.1rem;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: #005a87;
+    color: white;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table tr:hover {
+    background-color: #d1e7f7;
+}
+
+
+button {
+    background-color: #005a87;
+    color: white;
+    padding: 0.5em 1.5em;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 2em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button:hover {
+    background-color: #003f60;
+}
+
+
+.navbar {
+    background-color: rgba(44, 62, 80, 0.9);
+    color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.menu{
+    display: flex ;
+}
+
+.navbar .menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar .menu li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar .menu li a:hover {
+    color: #1abc9c;
+}
+
+
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn,
+.btn-outline {
+    background-color: #1abc9c;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid #1abc9c;
+}
+
+.btn:hover,
+.btn-outline:hover {
+    background-color: transparent;
+    color: #1abc9c;
+}
+
+footer {
+    background-color: rgba(44, 62, 80, 0.9);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    
+}
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+
+@media (max-width: 768px) {
+    table {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    table th, table td {
+        font-size: 1rem;
+        padding: 0.8em;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar .menu {
+        position: fixed;
+        flex-direction: column;
+        display: none;
+        gap: 10px;
+        width: 200px;
+    }
+
+    .auth-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    button {
+        width: 80%;
+    }
+}
+
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+    }
+
+    .filter-menu a {
+        display: block;
+        margin: 0.5em 0;
+        font-size: 1rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 0.5em 1em;
+    }
+
+    .btn,
+    .btn-outline {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    table th, table td {
+        padding: 0.6em;
+        font-size: 0.9rem;
+    }
+
+    .navbar {
+        padding: 1rem;
+    }
+}
+.encadre {
+    width: 300px;
+    padding: 15px;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 110px;
+    right: 20px; 
+    z-index: 1000; 
+}
+
+
+@media (max-width: 1500px) {
+    
+    .encadre ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between; 
+    }
+
+    .encadre ul li {
+        width: 23%; 
+        margin-bottom: 10px;
+        margin-right: 10px; 
+    }
+
+    
+    .encadre ul li:nth-child(4) {
+        margin-right: 0; 
+    }
+    .encadre {
+        width: 60%;
+        right: 5%;
+        left: 5%;
+        position: static; 
+        margin: 20px auto;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .encadre ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between; 
+    }
+
+    .encadre ul li {
+        width: 23%; 
+        margin-bottom: 30px;
+        margin-right: 30px; 
+    }
+
+    
+    .encadre ul li:nth-child(4) {
+        margin-right: 0; 
+    }
+    .encadre {
+        width: 95%;
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}
+.burger {
+    display: none; 
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+    position: fixed; 
+    top: 20px;
+    right: 20px;
+    z-index: 1100;
+}
+.burger div {
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+
+@media screen and (max-width: 768px) {
+    .burger {
+        display: flex;
+    }
+
+    .menu {
+        flex-direction: row;
+        justify-content: space-between; 
+        position: absolute;
+        top: 100 px;
+        right: 0;
+        background-color: #333;
+        width: 200px;
+        display: none;
+        text-align: center;
+        padding: 0.4rem 2rem;
+        z-index: 999;
+    }
+      
+
+    .menu li {
+        margin: 1rem 0;
+        
+    }
+
+    .menu a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.2rem;
+    }
+}
+
+
+@media screen and (min-width: 769px) {
+    .menu {
+        
+         
+        position: static;
+        background-color: transparent;
+        width: auto;
+        flex-direction: row;
+        padding: 0;
+    }
+
+    .menu a {
+        color: #333;
+    }
+}
+a.voir-details {
+    display: inline-block;  
+    padding: 10px 20px;  
+    background-color: #007bff;  
+    color: #fff;  
+    text-decoration: none;  
+    border-radius: 5px;  
+    font-weight: bold;  
+    transition: background-color 0.3s ease, transform 0.2s ease;  
+}
+
+a.voir-details:hover {
+    background-color: #0056b3;  
+    transform: scale(1.05);  
+}
+
+a.voir-details:active {
+    background-color: #004085;  
+    transform: scale(1);  
+}
+button {
+    padding: 10px 20px;  
+    background-color: #28a745;  
+    color: #fff;  
+    border: none;  
+    border-radius: 5px;  
+    font-size: 16px;  
+    cursor: pointer;  
+    transition: background-color 0.3s ease, transform 0.2s ease;  
+    text-align: center;  
+    margin: 10px 5px;  
+}
+
+
+button:hover {
+    background-color: #218838;  
+    transform: scale(1.05);  
+}
+
+
+button:active {
+    background-color: #1e7e34;  
+    transform: scale(1);  
+}
+
+
+a button {
+    text-decoration: none;  
+}
+
+
+a {
+    display: inline-block;  
+}
+a.voir-details {
+    display: inline-block;  
+    padding: 10px 20px;  
+    background-color: #007bff;  
+    color: #fff;  
+    text-decoration: none;  
+    border-radius: 5px;  
+    font-weight: bold;  
+    transition: background-color 0.3s ease, transform 0.2s ease;  
+}
+
+a.voir-details:hover {
+    background-color: #0056b3;  
+    transform: scale(1.05);  
+}
+
+a.voir-details:active {
+    background-color: #004085;  
+    transform: scale(1);  
+}
+button {
+    padding: 10px 20px;  
+    background-color: #28a745;  
+    color: #fff;  
+    border: none;  
+    border-radius: 5px;  
+    font-size: 16px;  
+    cursor: pointer;  
+    transition: background-color 0.3s ease, transform 0.2s ease;  
+    text-align: center;  
+    margin: 10px 5px;  
+}
+
+
+button:hover {
+    background-color: #218838;  
+    transform: scale(1.05);  
+}
+
+
+button:active {
+    background-color: #1e7e34;  
+    transform: scale(1);  
+}
+
+
+a button {
+    text-decoration: none;  
+}
+
+
+a {
+    display: inline-block;  
+}

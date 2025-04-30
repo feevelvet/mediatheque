@@ -1,0 +1,10 @@
+la base de donnée est dans mediatheque.sql 
+
+les différents logs sont :
+mjjp.mali@gmail.com = motdepasse ( admin )
+client1@example.com = motdepasse1 ( client basique )
+client2@example.com = motdepasse2 ( client basique )
+media@gmail.com = media ( s'occupe uniquement des emprunts )
+
+libre a toi de modifier les logs les perms etc 
+
